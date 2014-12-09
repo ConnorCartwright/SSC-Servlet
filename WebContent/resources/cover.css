@@ -27,7 +27,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  font-family: Titillium Web
+  font-family: Arial;
 }
 
 body {
@@ -222,4 +222,9 @@ a:hover.tooltips span {
   left: 50%;
   margin-left: -76px;
   z-index: 999;
+}
+
+#loginModal {
+	color: #313131;
+	text-align: left;
 }
