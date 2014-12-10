@@ -21,54 +21,48 @@
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' type='text/javascript'></script>
+    <script type="text/javascript">
+    $(window).load(function(){
+        $('#filterContactModal').modal('show');
+    });
+</script>
 </head>
 <body>
 
     <div class="site-wrapper">
-
       <div class="site-wrapper-inner">
-
         <div class="cover-container">
-
           <div class="masthead clearfix">
             <div class="inner">
               <h2 class="masthead-brand">SSC Exercise 5 - Java Servlet</h2>
             </div>
-          </div>
-          <div class = "pageContent">
-				<button type="button" id="openModal" class="btn btn-success btn-lg" data-toggle="modal" data-target="#loginModal">
-				  Login &nbsp<span class="glyphicon glyphicon-log-in" aria-hidden="true"> </span>
-				</button> 
           </div>
         </div>
       </div>
     </div>
     
     <!-- Modal -->
-	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal fade" id="filterContactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-	        <h4 class="modal-title">Login</h4>
+	        <h4 class="modal-title">Add Contact</h4>
 	      </div>
 	      <div class="modal-body">
-	      
-			<form role="form" action="LoginServlet" method="get">
-			  <div class="form-group">
-			    <label for="emailInput">Email address</label>
-			    <input type="email" class="form-control" id="emailInput" name="emailInput" placeholder="Enter email">
-			  </div>
-			  <div class="form-group">
-			    <label for="passwordInput">Password</label>
-			    <input type="password" class="form-control" id="passwordInput" name="passwordInput" placeholder="Password">
-			  </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-		        <button type="submit" class="btn btn-primary">Submit</button>
-		      </div>
-			</form>
-	      
+		      <form role="form" action="FilterContactsServlet" method="get">
+		        <div class="form-group">
+		          <label for="firstNameInput">First Name</label>
+		          <input type="text" class="form-control" id="firstNameInput" name="firstNameInput" placeholder="Enter first name">
+		        </div>
+		        <div class="form-group">
+		          <label for="secondNameInput">Second Name</label>
+		          <input type="text" class="form-control" id="secondNameInput" name="secondNameInput" placeholder="Enter second name">
+		        </div>
+		        <div class="modal-footer">
+		            <button type="submit" class="btn btn-primary">Send</button>
+		        </div>
+		      </form>
 	      </div>
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
